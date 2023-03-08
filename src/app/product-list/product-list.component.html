@@ -1,7 +1,24 @@
 <h2>Products</h2>
-<h2>Products</h2>
 
+<!-- *ngFor structural directive that renders
+      a template for each item in a collection -->
 <div *ngFor="let product of products">
+  <h3>
+    <a [title]="product.name + ' details'">
+    {{ product.name }} 
+    </a>
+  </h3>
+
+  <!-- add a description if the product has one
+       *ngIf  - show only if there is a product description -->
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+
+  <button type="button" (click)="share()">
+    Share
+  </button>
+
 </div>
 
 <!-- 
